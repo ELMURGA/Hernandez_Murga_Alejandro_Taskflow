@@ -2,7 +2,6 @@
 // problemas.php
 // Batería de Problemas - Fundamentos de PHP
 // Autor: Alejandro Hernández Murga
-// NOTA: guarda este archivo en public/problemas.php
 
 echo "<h1>Batería de Problemas - Fundamentos de PHP</h1>";
 echo "<p>Autor: Alejandro Hernández Murga</p>";
