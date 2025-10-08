@@ -231,8 +231,8 @@ echo "<hr>";
 echo "<h2>Problema 5.1: Ficha de Usuario</h2>";
 $usuario = [
     "nombre" => "Alejandro Hernández Murga",
-    "edad" => 23,
-    "email" => "alejandro@example.com",
+    "edad" => 20,
+    "email" => "alejandromurga@gmail.com",
     "estudiante" => true
 ];
 
