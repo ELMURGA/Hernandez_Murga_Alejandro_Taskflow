@@ -30,6 +30,15 @@ $isPremiumUser = true;          // Tipo Boolean
         <p><strong>Nombre:</strong> <?php echo $userName; ?></p>
         <p><strong>Edad:</strong> <?php echo $userAge; ?> años</p>
         <p><strong>Estado de la cuenta:</strong> Usuario <?php echo $isPremiumUser ? "Premium" : "Estándar"; ?></p>
+
+        <!-- Enlaces rápidos a las páginas de ejercicios -->
+        <section style="margin-top:1em;">
+            <h3>Ejercicios</h3>
+            <ul>
+                <li><a href="/public/problemas.php">Batería de Problemas (problemas.php)</a></li>
+                <li><a href="/public/desafios.php">Desafíos (desafios.php)</a></li>
+            </ul>
+        </section>
     </main>
 </body>
 </html>
