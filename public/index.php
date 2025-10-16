@@ -37,6 +37,7 @@ $isPremiumUser = true;          // Tipo Boolean
             <ul>
                 <li><a href="/public/problemas.php">Batería de Problemas (problemas.php)</a></li>
                 <li><a href="/public/desafios.php">Desafíos (desafios.php)</a></li>
+                <li><a href="/public/taller_avanzado.php">Taller Avanzado UD3 (taller_avanzado.php)</a></li>
             </ul>
         </section>
     </main>
