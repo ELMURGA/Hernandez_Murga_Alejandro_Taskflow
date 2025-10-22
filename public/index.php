@@ -1,44 +1,77 @@
 <?php
-// Bloque de configuración principal
+// Paso 2: Crear el Conjunto de Datos
+// Array multidimensional que simula las tareas de la base de datos
+$tasks = [
+    [
+        'title' => 'Completar la práctica de PHP',
+        'completed' => false,
+        'priority' => 'alta'
+    ],
+    [
+        'title' => 'Revisar el código del compañero',
+        'completed' => true,
+        'priority' => 'media'
+    ],
+    [
+        'title' => 'Estudiar los conceptos de arrays',
+        'completed' => false,
+        'priority' => 'media'
+    ],
+    [
+        'title' => 'Hacer un commit en Git',
+        'completed' => true,
+        'priority' => 'baja'
+    ],
+    [
+        'title' => 'Documentar el proyecto',
+        'completed' => false,
+        'priority' => 'alta'
+    ],
+    [
+        'title' => 'Optimizar el rendimiento del sitio',
+        'completed' => false,
+        'priority' => 'baja'
+    ]
+];
 
-// Paso 3: Creación de Variables y Constantes
-
-// Constante para el nombre del sitio
-define("SITE_NAME", "TaskFlow");
-
-// Variable para el título de la página actual
-$pageTitle = SITE_NAME . " - Página de Inicio";
-
-// Variables para simular los datos de un perfil de usuario
-$userName = "Alejandro Murga";  // Tipo String - personalizado con tu nombre
-$userAge = 20;                  // Tipo Integer
-$isPremiumUser = true;          // Tipo Boolean
+// Incluir el header
+include '../app/views/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo $pageTitle; ?></title>
-</head>
-<body>
-    <header>
-        <h1>Bienvenido a <?php echo SITE_NAME; ?></h1>
-    </header>
 
-    <main>
-        <h2>Perfil del Usuario</h2>
-        <p><strong>Nombre:</strong> <?php echo $userName; ?></p>
-        <p><strong>Edad:</strong> <?php echo $userAge; ?> años</p>
-        <p><strong>Estado de la cuenta:</strong> Usuario <?php echo $isPremiumUser ? "Premium" : "Estándar"; ?></p>
+<h2>Tareas Pendientes</h2>
 
-        <!-- Enlaces rápidos a las páginas de ejercicios -->
-        <section style="margin-top:1em;">
-            <h3>Ejercicios</h3>
-            <ul>
-                <li><a href="/public/problemas.php">Batería de Problemas (problemas.php)</a></li>
-                <li><a href="/public/desafios.php">Desafíos (desafios.php)</a></li>
-            </ul>
-        </section>
-    </main>
-</body>
-</html>
+<ul>
+    <?php
+    // Paso 3: Renderizar la Lista de Tareas con Lógica Condicional
+    foreach ($tasks as $task) {
+        // Inicializar la variable con la clase base
+        $taskClasses = 'task-item';
+        
+        // Condicional: comprobar si la tarea está completada
+        if ($task['completed']) {
+            $taskClasses .= ' completed';
+        }
+        
+        // Switch: evaluar la prioridad y añadir la clase correspondiente
+        switch ($task['priority']) {
+            case 'alta':
+                $taskClasses .= ' priority-alta';
+                break;
+            case 'media':
+                $taskClasses .= ' priority-media';
+                break;
+            case 'baja':
+                $taskClasses .= ' priority-baja';
+                break;
+        }
+        
+        // Imprimir el elemento de lista con las clases dinámicas
+        echo '<li class="' . $taskClasses . '">' . htmlspecialchars($task['title']) . '</li>';
+    }
+    ?>
+</ul>
+
+<?php
+// Incluir el footer
+include '../app/views/footer.php';
+?>
