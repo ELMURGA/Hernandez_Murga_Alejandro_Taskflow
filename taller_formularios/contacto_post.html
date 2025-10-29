@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Contacto (POST)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background-color: #f8fafc; }
+        h1 { color: #1e293b; }
+        form { display: grid; gap: 0.75rem; max-width: 420px; }
+        label { color: #334155; font-weight: 600; }
+        input, textarea { padding: 0.6rem; border: 1px solid #cbd5f5; border-radius: 4px; font-size: 1rem; }
+        textarea { min-height: 160px; resize: vertical; }
+        button { padding: 0.7rem 1.2rem; background-color: #16a34a; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #15803d; }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Contacto (POST)</h1>
+    <p>Los datos se enviarán en el cuerpo de la petición y no serán visibles en la URL.</p>
+    <form action="procesar_contacto.php" method="post">
+        <label for="nombre_contacto">Nombre</label>
+        <input type="text" id="nombre_contacto" name="nombre_contacto" placeholder="Ana García" required>
+
+        <label for="email_contacto">Correo electrónico</label>
+        <input type="email" id="email_contacto" name="email_contacto" placeholder="ana@example.com" required>
+
+        <label for="mensaje_contacto">Mensaje</label>
+        <textarea id="mensaje_contacto" name="mensaje_contacto" placeholder="Tu mensaje..." required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+    </form>
+</body>
+</html>
